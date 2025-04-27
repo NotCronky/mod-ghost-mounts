@@ -1,0 +1,41 @@
+###################################################################################################
+#   Mount Display IDs Configuration
+###################################################################################################
+
+# Alliance Mounts
+# Display ID for Alliance Ground Mount
+GhostMount.Alliance.Ground = 14337
+# Display ID for Alliance Flying Mount
+GhostMount.Alliance.Flying = 17785
+
+# Horde Mounts
+# Display ID for Horde Ground Mount
+GhostMount.Horde.Ground = 14349
+# Display ID for Horde Flying Mount
+GhostMount.Horde.Flying = 17767
+
+###################################################################################################
+#   Speed Configuration
+###################################################################################################
+
+# Speeds are in floating-point values, where 1.0 = no bonus speed.
+# Speed settings for players in level brackets
+
+# Speed for players between level 20 and 39
+GhostMount.Speed.20_39 = 1.6
+# Speed for players between level 40 and 59
+GhostMount.Speed.40_59 = 2.0
+# Speed for players between level 60 and 69
+GhostMount.Speed.60_69 = 2.5
+# Speed for players between level 70 and 80
+GhostMount.Speed.70_80 = 4.1
+
+###################################################################################################
+#   Flight Speed Configuration
+###################################################################################################
+
+# Flight speeds are for flying mounts only.
+# Speed for players between level 60 and 69 (for flying mounts only)
+GhostMount.FlySpeed.60_69 = 2.5
+# Speed for players between level 70 and 80 (for flying mounts only)
+GhostMount.FlySpeed.70_80 = 3.1
