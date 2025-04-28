@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Config.h"
 #include "Log.h"
+#include "Map.h"
 
 #define RemoveMount NULL
 
@@ -33,6 +34,18 @@ namespace mod_ghost_mounts
 
         void OnPlayerReleasedGhost(Player* player) override
         {
+            if (!player || player->IsAlive())
+                return;
+
+            if (!sConfigMgr->GetOption<bool>("GhostMount.Enable", true))
+                return;
+
+            if (sConfigMgr->GetOption<bool>("GhostMount.DisableInBG", true) && player->GetMap()->IsBattleground())
+                return;
+
+            if (sConfigMgr->GetOption<bool>("GhostMount.DisableInArena", true) && player->GetMap()->IsBattleArena())
+                return;
+
             uint8 level = player->GetLevel();
             uint32 mapId = player->GetMapId();
             bool canFly = IsFlyingAllowedMap(mapId);
@@ -84,16 +97,19 @@ namespace mod_ghost_mounts
                 player->SetSpeed(MOVE_FLIGHT, flySpeed, true);
             }
             player->SetSpeed(MOVE_RUN, speed, true);
+
+            player->SendCorpseReclaimDelay(0);
         }
 
         void OnPlayerResurrect(Player* player, float /*restore_percent*/, bool /*applySickness*/) override
         {
-            player->SetUInt32Value(UNIT_FIELD_MOUNTDISPLAYID, RemoveMount);
-            player->SetUInt32Value(UNIT_FIELD_DISPLAYID, RemoveMount);
-
-            player->InitDisplayIds();
+            if (!player)
+                return;
 
             player->SetCanFly(false);
+            player->SetUInt32Value(UNIT_FIELD_MOUNTDISPLAYID, RemoveMount);
+            player->SetUInt32Value(UNIT_FIELD_DISPLAYID, RemoveMount);
+            player->InitDisplayIds();
             player->SetSpeed(MOVE_FLIGHT, m_normalFlySpeed, true);
             player->SetSpeed(MOVE_RUN, 1.0f, true);
         }

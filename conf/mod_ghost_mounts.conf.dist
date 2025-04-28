@@ -1,18 +1,30 @@
 ###################################################################################################
+# mod-ghost-mounts configuration
+###################################################################################################
+
+# Enable module? (1 = Enable, 0 = Disable)
+GhostMount.Enable = 1
+
+# Disable ghost mounts in Battlegrounds? (1 = Yes, 0 = No)
+GhostMount.DisableInBG = 1
+
+# Disable ghost mounts in Arenas? (1 = Yes, 0 = No)
+GhostMount.DisableInArena = 1
+###################################################################################################
 #   Mount Display IDs Configuration
 ###################################################################################################
 
 # Alliance Mounts
 # Display ID for Alliance Ground Mount
-GhostMount.Alliance.Ground = 14337
+GhostMount.Alliance.Ground = 2404
 # Display ID for Alliance Flying Mount
-GhostMount.Alliance.Flying = 17785
+GhostMount.Alliance.Flying = 17697
 
 # Horde Mounts
 # Display ID for Horde Ground Mount
-GhostMount.Horde.Ground = 14349
+GhostMount.Horde.Ground = 2327
 # Display ID for Horde Flying Mount
-GhostMount.Horde.Flying = 17767
+GhostMount.Horde.Flying = 17699
 
 ###################################################################################################
 #   Speed Configuration
@@ -22,13 +34,13 @@ GhostMount.Horde.Flying = 17767
 # Speed settings for players in level brackets
 
 # Speed for players between level 20 and 39
-GhostMount.Speed.20_39 = 1.6
+GhostMount.Speed.20-39 = 1.6
 # Speed for players between level 40 and 59
-GhostMount.Speed.40_59 = 2.0
+GhostMount.Speed.40-59 = 2.0
 # Speed for players between level 60 and 69
-GhostMount.Speed.60_69 = 2.5
+GhostMount.Speed.60-69 = 2.5
 # Speed for players between level 70 and 80
-GhostMount.Speed.70_80 = 4.1
+GhostMount.Speed.70-80 = 4.1
 
 ###################################################################################################
 #   Flight Speed Configuration
@@ -36,6 +48,6 @@ GhostMount.Speed.70_80 = 4.1
 
 # Flight speeds are for flying mounts only.
 # Speed for players between level 60 and 69 (for flying mounts only)
-GhostMount.FlySpeed.60_69 = 2.5
+GhostMount.FlySpeed.60-69 = 2.5
 # Speed for players between level 70 and 80 (for flying mounts only)
-GhostMount.FlySpeed.70_80 = 3.1
+GhostMount.FlySpeed.70-80 = 3.1
