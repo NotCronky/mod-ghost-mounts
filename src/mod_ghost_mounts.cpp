@@ -91,6 +91,8 @@ namespace mod_ghost_mounts
             player->SetUInt32Value(UNIT_FIELD_MOUNTDISPLAYID, RemoveMount);
             player->SetUInt32Value(UNIT_FIELD_DISPLAYID, RemoveMount);
 
+            player->InitDisplayIds();
+
             player->SetCanFly(false);
             player->SetSpeed(MOVE_FLIGHT, m_normalFlySpeed, true);
             player->SetSpeed(MOVE_RUN, 1.0f, true);
